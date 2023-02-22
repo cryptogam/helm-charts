@@ -5,14 +5,14 @@
 replicaCount: 1
 
 image:
-  repository: nginx
+  repository: lissy93/dashy
   pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
-  tag: ""
+  tag: "latest"
 
 imagePullSecrets: []
-nameOverride: "dashy-app"
-fullnameOverride: "dashy-chart"
+nameOverride: ""
+fullnameOverride: ""
 
 serviceAccount:
   # Specifies whether a service account should be created
@@ -21,7 +21,7 @@ serviceAccount:
   annotations: {}
   # The name of the service account to use.
   # If not set and create is true, a name is generated using the fullname template
-  name: "dashy"
+  name: ""
 
 podAnnotations: {}
 
@@ -37,7 +37,7 @@ securityContext: {}
   # runAsUser: 1000
 
 service:
-  type: NodePort
+  type: ClusterIP
   port: 80
 
 ingress:
@@ -80,3 +80,29 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+dashyConfig:
+  data: |
+      pageInfo:
+        title: Dashy
+        description: Welcome to your new dashboard!
+        navLinks:
+          - title: GitHub
+            path: https://github.com/Lissy93/dashy
+          - title: Documentation
+            path: https://dashy.to/docs
+      appConfig:
+        theme: colorful
+        layout: auto
+        iconSize: medium
+        language: en
+      sections:
+        - name: Getting Started
+          icon: fas fa-rocket
+          items:
+            - title: Dashy Live
+              description: Development a project management links for Dashy
+              icon: https://i.ibb.co/qWWpD0v/astro-dab-128.png
+              url: https://live.dashy.to/
+              target: newtab
+              id: 0_1481_dashylive
