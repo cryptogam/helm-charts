@@ -1,6 +1,10 @@
 apiVersion: v2
 name: dashy
-description: A Helm chart for Kubernetes
+description: A helm chart for a custom dashy deployment
+
+maintainers:
+  - name: cryptogrampus
+    email: cryptogrampus@gmail.com
 
 # A chart can be either an 'application' or a 'library' chart.
 #
