@@ -22,3 +22,5 @@ To uninstall the chart:
 
 - [dashy](./charts/dashy/README.md)
 
+## Maintainers
+- cryptogrampus
